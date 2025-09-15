@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Ticket, ArrowRight } from 'lucide-react';
 import { eventsData } from '../data/mocks';
 
-export default function Eventos() {
+export default function Eventos({ onNavigate }) {
+  // Deixa os eventos disponíveis globalmente (fallback para EventPage em caso de reload direto)
+  useEffect(() => {
+    if (Array.isArray(eventsData)) {
+      window.__EVENTS__ = eventsData;
+    }
+  }, []);
+
   return (
     <div className="space-y-6">
       <motion.div
@@ -80,6 +88,7 @@ export default function Eventos() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => onNavigate(`/event/${event.id}`)}
                     className="flex items-center space-x-2 btn-primary px-8 py-3 glow-primary"
                   >
                     <span className="font-semibold">VER TUDO</span>
