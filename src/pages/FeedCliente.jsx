@@ -1,14 +1,6 @@
-
-// src/pages/FeedCliente.jsx
 import React from "react";
 import { CalendarHeart, Heart, HeartOff, MapPin } from "lucide-react";
 import { eventsData } from "../data/mocks";
-
-/**
- * FeedCliente - tela para o USUÁRIO FINAL (descoberta/entretenimento)
- * Somente Tailwind + utilitários do index.css (sem inline styles).
- * Não substitui a tela administrativa.
- */
 
 const USER = {
   name: "Rafael",
@@ -58,7 +50,7 @@ function Story({ name, img, label }) {
 }
 
 function EventCard({ event }) {
-  const liked = Math.random() > 0.5; // mock
+  const liked = Math.random() > 0.5;
   return (
     <div className="feed-card overflow-hidden">
       <div className="relative">
@@ -89,7 +81,6 @@ function EventCard({ event }) {
 export default function FeedCliente() {
   return (
     <div className="grid gap-5 p-6">
-      {/* Top */}
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-xl font-bold">Olá, {USER.name} 👋</h2>
@@ -102,7 +93,6 @@ export default function FeedCliente() {
         </div>
       </div>
 
-      {/* Stories */}
       <div className="mt-1">
         <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
           {STORIES.map((s) => (
@@ -111,9 +101,7 @@ export default function FeedCliente() {
         </div>
       </div>
 
-      {/* 2 colunas */}
       <div className="grid gap-6 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px]">
-        {/* Esquerda */}
         <div className="grid gap-6">
           <div>
             <SectionTitle action="Ver todos">Eventos perto de você</SectionTitle>
@@ -139,7 +127,6 @@ export default function FeedCliente() {
           </div>
         </div>
 
-        {/* Direita */}
         <div className="grid gap-6">
           <div className="feed-card">
             <div className="px-4 pt-3">

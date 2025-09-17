@@ -4,7 +4,6 @@ import { Calendar, Clock, Ticket, ArrowRight } from 'lucide-react';
 import { eventsData } from '../data/mocks';
 
 export default function Eventos({ onNavigate }) {
-  // Deixa os eventos disponíveis globalmente (fallback para EventPage em caso de reload direto)
   useEffect(() => {
     if (Array.isArray(eventsData)) {
       window.__EVENTS__ = eventsData;

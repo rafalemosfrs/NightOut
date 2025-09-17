@@ -1,17 +1,13 @@
-// src/pages/EventPage.jsx
 import { motion } from "framer-motion";
 
-// Página de detalhes do evento usando o roteador caseiro (sem react-router)
 export default function EventPage({ onNavigate, params }) {
   const id = params?.id;
 
-  // Busca o evento no cache global preenchido pela página Eventos
   let event =
     Array.isArray(window.__EVENTS__)
       ? window.__EVENTS__.find((e) => String(e.id) === String(id))
       : null;
 
-  // Fallback mínimo caso acessem a rota direto
   if (!event) {
     event = {
       id,
@@ -31,7 +27,6 @@ export default function EventPage({ onNavigate, params }) {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#0B1220] to-[#071224] text-white">
-      {/* Topbar simples */}
       <div className="mx-auto max-w-6xl px-4 py-6 flex items-center justify-between">
         <button
           onClick={() => onNavigate("/eventos")}
@@ -51,14 +46,12 @@ export default function EventPage({ onNavigate, params }) {
           transition={{ duration: 0.4 }}
           className="relative overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10"
         >
-          {/* Capa */}
           <div className="relative">
             <img
               src={event.cover || event.image}
               alt={event.title}
               className="h-[340px] w-full object-cover"
             />
-            {/* Avatar sobreposto */}
             <img
               src={event.hostAvatar || event?.artist?.avatar}
               alt="host"
@@ -66,7 +59,6 @@ export default function EventPage({ onNavigate, params }) {
             />
           </div>
 
-          {/* Conteúdo */}
           <div className="px-6 pt-12 pb-8 md:px-10">
             <h1 className="text-2xl md:text-[22px] font-semibold tracking-tight">
               {event.title}

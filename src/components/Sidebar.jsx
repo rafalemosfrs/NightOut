@@ -46,7 +46,6 @@ export default function Sidebar({ currentPath, onNavigate }) {
 
   const sidebarContent = (
     <div className="h-full flex flex-col">
-      {/* Logo */}
       <div className="p-6 border-b border-border">
         <h1 className="text-2xl font-bold text-text tracking-tight">
           NIGHT OUT
