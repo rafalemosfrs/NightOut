@@ -59,3 +59,34 @@ body {
 .chip-success { @apply bg-success/15 text-success px-3 py-1 rounded-full text-sm font-medium; }
 .chip-warning { @apply bg-warning/15 text-warning px-3 py-1 rounded-full text-sm font-medium; }
 .chip-offline { @apply bg-panel text-muted border border-border px-3 py-1 rounded-full text-sm font-medium; }
+
+
+/* === Feed utilities === */
+.story-ring{
+  background: conic-gradient(from 220deg, #7C3AED, #2563EB, #10B981, #7C3AED);
+}
+.no-scrollbar::-webkit-scrollbar{ display:none; }
+.no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+
+.feed-card{ @apply glass overflow-hidden; }
+
+.btn-ghost{
+  @apply px-3 py-2 rounded-full border border-border bg-transparent hover:bg-panel/50 transition focus-ring text-sm;
+}
+
+.btn-grad{
+  @apply rounded-xl border border-border font-semibold px-3 py-2 bg-gradient-to-b from-primary/20 to-accent/10 hover:brightness-110 transition;
+}
+
+.badge-dark{
+  @apply bg-black/60 border border-white/10 px-2.5 py-0.5 rounded-full text-xs;
+}
+
+.chip{
+  @apply px-3 py-1 rounded-full border border-border bg-white/5 text-sm;
+}
+
+.like-btn{
+  @apply absolute right-2 bottom-2 w-9 h-9 grid place-items-center rounded-full border border-white/10 bg-black/50 hover:bg-black/60 transition;
+}
+

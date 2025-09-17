@@ -10,9 +10,10 @@ import Perfil from './pages/Perfil';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import EventPage from './pages/EventPage';
+import FeedCliente from './pages/FeedCliente';
 
 const routes = {
-  '/': Dashboard,
+  '/admin': Dashboard,
   '/tabelas': Tabelas,
   '/estabelecimentos': Estabelecimentos,
   '/eventos': Eventos,
@@ -20,6 +21,7 @@ const routes = {
   '/login': Login,
   '/register': Register,
   '/event/:id': EventPage,
+  '/': FeedCliente,
 };
 
 const layoutRoutes = ['/', '/tabelas', '/estabelecimentos', '/eventos', '/perfil', '/event/:id'];
